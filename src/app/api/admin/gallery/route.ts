@@ -7,7 +7,7 @@ import { isImageFile, uploadImageFile } from "@/lib/r2";
 const schema = z.object({
   title: z.string().trim().min(2).max(120),
   description: z.string().trim().max(400).optional().or(z.literal("")),
-  imageUrl: z.url().max(500),
+  imageUrl: z.string().url().max(500),
   category: z.string().trim().min(2).max(60),
   isPublished: z.boolean().default(true),
 });
