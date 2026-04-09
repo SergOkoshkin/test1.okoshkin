@@ -1,0 +1,14 @@
+# Query: z.url(
+# ContextLines: 1
+
+Результаты: 2 - Файлы 2
+
+src/app/api/admin/gallery/route.ts:
+   9    description: z.string().trim().max(400).optional().or(z.literal("")),
+  10:   imageUrl: z.string().url().max(500),
+  11    category: z.string().trim().min(2).max(60),
+
+src/app/api/admin/gallery/[id]/route.ts:
+  13    description: z.string().trim().max(400).optional().or(z.literal("")),
+  14:   imageUrl: z.string().url().max(500),
+  15    category: z.string().trim().min(2).max(60),
