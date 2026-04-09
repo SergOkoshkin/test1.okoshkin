@@ -8,7 +8,7 @@ const commentSchema = z.object({
   name: z.string().trim().min(2).max(80),
   body: z.string().trim().min(10).max(1000),
   rating: z.coerce.number().int().min(1).max(5),
-  photoUrl: z.url().max(500).optional().or(z.literal("")),
+  photoUrl: z.string().url().max(500).optional().or(z.literal("")),
 });
 
 function getFormValue(formData: FormData, key: string) {
